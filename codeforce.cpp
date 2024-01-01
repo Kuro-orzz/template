@@ -2,10 +2,10 @@
 // #include <bits/stdc++.h>
 // #pragma GCC optimize ("O3")
 // #pragma GCC target ("sse4")
-#include <ext/pb_ds/assoc_container.hpp>
-#include <ext/pb_ds/tree_policy.hpp>
-using namespace __gnu_pbds;
-using ordered_set = tree<int, null_type, std::less<int>, rb_tree_tag, tree_order_statistics_node_update>;
+// #include <ext/pb_ds/assoc_container.hpp>
+// #include <ext/pb_ds/tree_policy.hpp>
+// using namespace __gnu_pbds;
+// using ordered_set = tree<int, null_type, std::less<int>, rb_tree_tag, tree_order_statistics_node_update>;
 #include <iostream>
 #include <algorithm>
 #include <cmath>
@@ -34,8 +34,6 @@ using namespace std;
 
 #ifndef ONLINE_JUDGE
 #define debug(x) cerr << #x << " = " << x << '\n';
-#else
-#define debug(x...)
 #endif
 
 #define vi vector<int>
@@ -52,8 +50,9 @@ void solve(){
 }
 
 int main(){
-    fast(); cin.exceptions(cin.failbit);
-    if("test.inp"){filein(); fileout();}
+    fast(); //cin.exceptions(cin.failbit);  // Note: this can cause runtime error, becareful when use this. Should use when need to debug only
+    ifstream file("test.inp");
+    if(file.is_open()){filein(); fileout();}  
     int t; cin >> t;
     while(t--)
         solve(); 
